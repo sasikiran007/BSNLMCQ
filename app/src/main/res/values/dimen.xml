@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="course_top_margin">16dp</dimen>
+    <dimen name="course_left_margin">8dp</dimen>
+    <dimen name="course_right_margin">8dp</dimen>
+    <dimen name="course_bottom_margin">8dp</dimen>
+    <dimen name="progress_card_height">95dp</dimen>
+    <dimen name="progress_card_total_height">288dp</dimen>
+    <dimen name="progress_card_title_textSize">16sp</dimen>
+    <dimen name="progress_card_title_topMargin">16dp</dimen>
+    <dimen name="progress_card_title_bottomMargin">16dp</dimen>
+    <dimen name="progress_card_title_leftMargin">48dp</dimen>
+    <dimen name="progress_card_score_leftMargin">48dp</dimen>
+    <dimen name="progress_card_score_rightMargin">24dp</dimen>
+    <dimen name="progress_card_score_bottomMargin">16dp</dimen>
+    <dimen name="progress_card_score_textSize">12sp</dimen>
+
+</resources>

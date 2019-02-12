@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:isScrollContainer="true">
+
+    <FrameLayout
+        android:id="@+id/courseFilter"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/white1">
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/myCourseBorder1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/courseFilter"
+        android:background="@android:color/darker_gray">
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/selectCourse"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:layout_below="@+id/myCourseBorder1">
+
+        <TextView
+            android:id="@+id/selectCourseTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="8dp"
+            android:text="Select the Course" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/courseFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:layout_below="@+id/selectCourse">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/course1"
+            android:layout_width="136dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="8dp"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="8dp">
+
+            <TextView
+                android:id="@+id/course1Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/course_top_margin"
+                android:gravity="center"
+                android:text="Management"
+                android:textColor="@android:color/background_dark" />
+
+            <TextView
+                android:id="@+id/course1CardsCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="@dimen/course_bottom_margin"
+                android:layout_marginLeft="@dimen/course_left_margin"
+                android:gravity="left|center_vertical"
+                android:text="246"
+                android:textColor="@color/scoreColor" />
+
+            <TextView
+                android:id="@+id/course1Percentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_marginBottom="@dimen/course_bottom_margin"
+                android:layout_marginRight="@dimen/course_right_margin"
+                android:gravity="right|center_vertical"
+                android:text="18%"
+                android:textColor="@color/scoreColor" />
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/course2"
+            android:layout_width="136dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="8dp"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="8dp">
+
+            <TextView
+                android:id="@+id/course2Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/course_top_margin"
+                android:gravity="center"
+                android:text="CFA"
+                android:textColor="@android:color/background_dark" />
+
+            <TextView
+                android:id="@+id/course2CardsCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="@dimen/course_bottom_margin"
+                android:layout_marginLeft="@dimen/course_left_margin"
+                android:gravity="left|center_vertical"
+                android:text="TextView"
+                android:textColor="@color/scoreColor" />
+
+            <TextView
+                android:id="@+id/course2Percentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_marginBottom="@dimen/course_bottom_margin"
+                android:layout_marginRight="@dimen/course_right_margin"
+                android:gravity="right|center_vertical"
+                android:text="TextView"
+                android:textColor="@color/scoreColor" />
+
+        </android.support.v7.widget.CardView>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/myCourseBorder2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/courseFrameLayout"
+        android:background="@android:color/darker_gray"
+        android:visibility="invisible">
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/courseAction"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/progress_card_total_height"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/courseFrameLayout"
+        android:layout_marginBottom="1dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/darker_gray">
+
+        <FrameLayout
+            android:id="@+id/courseAction1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/studyCardView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/progress_card_height"
+                android:layout_marginTop="1dp"
+                app:cardElevation="4dp">
+
+                <TextView
+                    android:id="@+id/notes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="@dimen/progress_card_title_leftMargin"
+                    android:layout_marginTop="@dimen/progress_card_title_topMargin"
+                    android:gravity="left"
+                    android:text="Study the note points"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/progress_card_title_textSize" />
+
+                <TextView
+                    android:id="@+id/totalNotePoints"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="@dimen/progress_card_score_bottomMargin"
+                    android:layout_marginLeft="@dimen/progress_card_score_leftMargin"
+                    android:gravity="left"
+                    android:text="Total  190"
+                    android:textColor="@color/scoreColor"
+                    android:textSize="@dimen/progress_card_score_textSize" />
+
+                <TextView
+                    android:id="@+id/notePointsProgress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center"
+                    android:layout_marginBottom="@dimen/progress_card_score_bottomMargin"
+                    android:text="Completed 78%"
+                    android:textColor="@color/scoreColor"
+                    android:textSize="@dimen/progress_card_score_textSize" />
+            </android.support.v7.widget.CardView>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/courseAction2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/revisionCardView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/progress_card_height"
+                app:cardElevation="4dp">
+
+                <TextView
+                    android:id="@+id/revision"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="@dimen/progress_card_title_leftMargin"
+                    android:layout_marginTop="@dimen/progress_card_title_topMargin"
+                    android:gravity="left"
+                    android:text="Revise the note points "
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/progress_card_title_textSize" />
+
+                <TextView
+                    android:id="@+id/totalRevisionPoints"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="@dimen/progress_card_score_bottomMargin"
+                    android:layout_marginLeft="@dimen/progress_card_score_leftMargin"
+                    android:gravity="left"
+                    android:text="Total 10"
+                    android:textColor="@color/scoreColor"
+                    android:textSize="@dimen/progress_card_score_textSize" />
+
+                <TextView
+                    android:id="@+id/revisionPointsProgress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center"
+                    android:layout_marginBottom="@dimen/progress_card_score_bottomMargin"
+                    android:text="Completed 70%"
+                    android:textColor="@color/scoreColor"
+                    android:textSize="@dimen/progress_card_score_textSize" />
+
+                <TextView
+                    android:id="@+id/revisionPointsAccuracy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|right"
+                    android:layout_marginBottom="@dimen/progress_card_score_bottomMargin"
+                    android:layout_marginRight="@dimen/progress_card_score_rightMargin"
+                    android:text="Accuracy 76%"
+                    android:textColor="@color/scoreColor"
+                    android:textSize="@dimen/progress_card_score_textSize" />
+            </android.support.v7.widget.CardView>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/courseAction3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="1dp">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/testCardView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/progress_card_height"
+                app:cardElevation="4dp">
+
+                <TextView
+                    android:id="@+id/revisionTest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="@dimen/progress_card_title_leftMargin"
+                    android:layout_marginTop="@dimen/progress_card_title_topMargin"
+                    android:gravity="left"
+                    android:text="Take a test"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/progress_card_title_textSize" />
+
+                <TextView
+                    android:id="@+id/totalQuestions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="@dimen/progress_card_score_bottomMargin"
+                    android:layout_marginLeft="@dimen/progress_card_score_leftMargin"
+                    android:gravity="left"
+                    android:text="TextView"
+                    android:textColor="@color/scoreColor"
+                    android:textSize="@dimen/progress_card_score_textSize" />
+
+                <TextView
+                    android:id="@+id/revisionTestProgress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center"
+                    android:layout_marginBottom="@dimen/progress_card_score_bottomMargin"
+                    android:text="TextView"
+                    android:textColor="@color/scoreColor"
+                    android:textSize="@dimen/progress_card_score_textSize" />
+
+                <TextView
+                    android:id="@+id/revisionTestAccuracy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|right|center"
+                    android:layout_marginBottom="@dimen/progress_card_score_bottomMargin"
+                    android:layout_marginRight="@dimen/progress_card_score_rightMargin"
+                    android:text="TextView"
+                    android:textColor="@color/scoreColor"
+                    android:textSize="@dimen/progress_card_score_textSize" />
+            </android.support.v7.widget.CardView>
+        </FrameLayout>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/myCourseBorder3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/myCourseActionBar"
+        android:background="@android:color/darker_gray">
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/myCourseActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white1">
+
+    </FrameLayout>
+</android.widget.RelativeLayout>

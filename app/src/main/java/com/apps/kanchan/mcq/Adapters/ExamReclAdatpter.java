@@ -1,17 +1,15 @@
-package com.apps.kanchan.mcq;
+package com.apps.kanchan.mcq.Adapters;
 
-import android.graphics.Color;
-import android.graphics.Typeface;
-import android.support.v4.widget.TextViewCompat;
-import android.support.v7.view.menu.MenuAdapter;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.apps.kanchan.mcq.Helpers.ExamOnClickHelper;
+import com.apps.kanchan.mcq.MainActivity;
+import com.apps.kanchan.mcq.R;
 
 import java.util.ArrayList;
 
@@ -39,7 +37,7 @@ public class ExamReclAdatpter extends RecyclerView.Adapter<ExamReclAdatpter.Exam
         holder.vItemView.setTag(position);
         Log.i("Info"," "+position+":onBindViewHolder.vExamName :"+holder.vExamName);
         if(MainActivity.SELECTED_EXAM.equals(examNameList.get(position)) ) {
-            sExamOnClickHelper.processOnlick(holder.itemView);
+            sExamOnClickHelper.processOnclick(holder.itemView);
         }
     }
 
@@ -62,7 +60,7 @@ public class ExamReclAdatpter extends RecyclerView.Adapter<ExamReclAdatpter.Exam
                 @Override
                 public void onClick(View view) {
                     Log.i("Info"," :"+vExamName.getText()+" "+vItemView.getTag());
-                    sExamOnClickHelper.processOnlick(view);
+                    sExamOnClickHelper.processOnclick(view);
                 }
             });
         }
