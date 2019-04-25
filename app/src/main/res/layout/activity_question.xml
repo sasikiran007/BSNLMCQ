@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.apps.kanchan.mcq.MainActivity">
+
+
+    <TextView
+        android:id="@+id/questionTV"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="sans-serif"
+        android:freezesText="true"
+        android:includeFontPadding="true"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="10dp"
+        android:paddingTop="20sp"
+        android:text="TextView"
+        android:textAlignment="viewStart"
+        android:textAllCaps="false"
+        android:textColor="@android:color/holo_blue_bright"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/questionIV"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@id/questionTV"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <ListView
+        android:id="@+id/optionsLV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/questionIV"
+        android:paddingStart="5dp" />
+
+    <FrameLayout
+        android:id="@+id/navigationBar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@+id/optionsLV"
+        android:layout_alignParentStart="true">
+
+        <ImageButton
+            android:id="@+id/previousIB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            app:srcCompat="@android:drawable/ic_media_previous" />
+
+        <ImageButton
+            android:id="@+id/nextIB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            app:srcCompat="@android:drawable/ic_media_next" />
+
+        <Button
+            android:id="@+id/finishButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Finish"
+            android:textColor="@color/colorAccent"
+            android:textColorHighlight="@android:color/holo_red_dark" />
+    </FrameLayout>
+
+</android.widget.RelativeLayout>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.apps.kanchan.mcq.ResultsActivity">
+
+    <TextView
+        android:id="@+id/resultTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/homeButton"
+        android:layout_centerHorizontal="true"
+        android:padding="5dp"
+        android:text="You are scored"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/homeButton"
+        style="@style/Widget.AppCompat.Button.Small"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:text="HOME"
+        android:textColor="@color/colorAccent"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/totalQuestionsTV"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_alignStart="@+id/totalScoreTV"
+        android:layout_below="@+id/totalScoreTV"
+        android:layout_marginTop="18dp"
+        android:gravity="center"
+        android:text="20"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/totalScoreTV"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_above="@+id/lineImageView"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="10"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/lineImageView"
+        android:layout_width="250dp"
+        android:layout_height="15dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        app:srcCompat="@drawable/line"
+        android:layout_alignBottom="@+id/circleImageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="139dp" />
+
+    <ImageView
+        android:id="@+id/circleImageView"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:srcCompat="@drawable/circle"
+        android:layout_below="@+id/resultTextView"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/ReviewAllTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/circleImageView"
+        android:layout_below="@+id/circleImageView"
+        android:layout_marginTop="22dp"
+        android:text=">> Review all quetions"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="18sp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/ReviewIncorrectTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/ReviewAllTextView"
+        android:layout_below="@+id/ReviewAllTextView"
+        android:layout_marginTop="22dp"
+        android:text=">> Review only incorrected "
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="18sp"
+        android:textStyle="italic" />
+
+</RelativeLayout>

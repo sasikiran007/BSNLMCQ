@@ -26,6 +26,9 @@ public class StudyCardCSVObjectifier {
     //private InputStream inputStream;
     private List<StudyCard> mStudyCards;
     private CSVReader mCsvReader;
+    private int mVersion;
+    private String mExam;
+    private String mStream;
 
     public StudyCardCSVObjectifier(Context context,String source) throws IOException {
         mAssetManager = context.getAssets();
@@ -38,11 +41,22 @@ public class StudyCardCSVObjectifier {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        tokens = mCsvReader.readNext();
+        if(tokens.length == 3) {
+            mVersion = Integer.parseInt(tokens[0]);
+            mExam = tokens[1];
+            mStream = tokens[2];
+        }else {
+            Log.i("Error","StudyCard file have wrong input");
+            return;
+        }
         while((tokens = mCsvReader.readNext()) != null){
+
             if(tokens.length == 3) {
-                mStudyCards.add(new StudyCard(tokens[0],tokens[1],tokens[2]));
+                mStudyCards.add(new StudyCard(mVersion,mExam,mStream,tokens[0],tokens[1],tokens[2]));
             }else {
                 Log.i("Error","StudyCard file have wrong input");
+                return;
             }
         }
     }

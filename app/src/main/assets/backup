@@ -1,0 +1,71 @@
+questions.clear();
+        //questionNumber = 0;
+
+        Question question = new Question("What is the capital of Telengana?");
+        final ArrayList<String> textOptions = new ArrayList<>();
+        textOptions.add("Hyderabad");
+        textOptions.add("Kolkata");
+        textOptions.add("Panaji");
+        textOptions.add("Puri");
+        question.setCorrectOption(0);
+        question.setOptions(textOptions);
+        questions.add(question);
+
+        Question question1 = new Question("What is the capital of Andhrapradesh?");
+        ArrayList<String> textOptions1 = new ArrayList<>();
+        textOptions1.add("Hyderabad");
+        textOptions1.add("Kolkata");
+        textOptions1.add("Amaravathi");
+        textOptions1.add("Puri");
+        question1.setOptions(textOptions1);
+        question1.setCorrectOption(2);
+        questions.add(question1);
+        test = new Test(questions);
+
+
+          testCategories = new HashMap<>();
+                testCategories.put("E1-E2",new ArrayList<>(Arrays.asList("CM","CFA")));
+                inputData("E2-E3","CM",testCategories);
+                inputData("E2-E3","CFA",testCategories);
+                testCategories.put("E3-E4",new ArrayList<>(Arrays.asList("CM","CFA")));
+                testCategories.put("E4-E5",new ArrayList<>(Arrays.asList("CM","CFA")));
+        ////////////////////////////////
+        //   ListView testsListView = (ListView) findViewById(R.id.testListView);
+             //   TestListViewAdapter testListViewAdapter = new TestListViewAdapter(getApplicationContext(),new ArrayList<String>(testCategories.keySet()));
+             //   testsListView.setAdapter(testListViewAdapter);
+             //   testCategoryListView = (ListView) findViewById(R.id.testCategoriesListView);
+
+
+         RecyclerView examReclList = (RecyclerView) findViewById(R.id.examListRecycleView);
+                examReclList.setHasFixedSize(true);
+                LinearLayoutManager examLinearLayoutManager = new LinearLayoutManager(this);
+                examLinearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+                examReclList.setLayoutManager(examLinearLayoutManager);
+                ExamReclAdatpter examReclAdatpter = new ExamReclAdatpter(new ArrayList<>(examMap.keySet()));
+                examReclList.setAdapter(examReclAdatpter);
+
+                examCategoryReclList = (RecyclerView) findViewById(R.id.examCategoriesRecycleView);
+                //examCategoryReclList.setHasFixedSize(true);
+                final GridLayoutManager examCategoryGlm = new GridLayoutManager(this,3);
+                examCategoryReclList.setLayoutManager(examCategoryGlm);
+                examCategoryReclList.getViewTreeObserver().addOnGlobalLayoutListener(
+                        new ViewTreeObserver.OnGlobalLayoutListener() {
+                            @Override
+                            public void onGlobalLayout() {
+                                examCategoryReclList.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                                int viewWidth = examCategoryReclList.getMeasuredWidth();
+                                float cardViewWidth = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,120,getApplicationContext().getResources().getDisplayMetrics());
+                                int newSpanCount = (int) Math.floor(viewWidth / cardViewWidth);
+                                examCategoryGlm.setSpanCount(newSpanCount);
+                                examCategoryGlm.requestLayout();
+                            }
+                        }
+                );
+                TextView confirm = (TextView) findViewById(R.id.startTextView);
+                final Intent intent = new Intent(this,StudyActivity.class);
+                confirm.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        startActivity(intent);
+                    }
+                });
